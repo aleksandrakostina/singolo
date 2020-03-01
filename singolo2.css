@@ -85,9 +85,6 @@ p {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;  
-    /*height: 600px;
-
-    overflow: hidden; */
 } 
 
 .portfolio__img:nth-child(n+13){
