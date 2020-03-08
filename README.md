@@ -1,2 +1,1 @@
-# singolo
-singolo
+https://aleksandrakostina.github.io/singolo/index
