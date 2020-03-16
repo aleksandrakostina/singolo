@@ -21,6 +21,9 @@ p {
 .header {
     background-color: #2D303A;
     border-bottom: 6px solid #323746;
+    position: sticky;
+    top: 0;
+    z-index: 8;
 }
 
 .container {
@@ -66,9 +69,12 @@ p {
 
 .nav__link {
     margin-right: 12px;
+    display: inline-block;
    
     text-decoration: none;
     color: #FFFFFF;
+
+    list-style-type: none;
 }
 
 .nav__link:after {
@@ -85,48 +91,95 @@ p {
     display: none;
 }
 
-.nav__link:hover {
+.nav__link:hover,
+.nav__link_active {
     color: #f06c64;
+
+    cursor: pointer;
 }
 
 /*--------Slider----------*/
 
 .slider {
+    /*max-height: 600px;*/
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
+    transition: all ease 1s;
+}
+
+.slider_blue {
+    background-color: #648bf0;
+    border-bottom: 6px solid #348bf0;
+    transition: all ease 1s;
 }
 
 .slider__inner {
     position: relative;
-
-    padding: 53px 72px;   
+    text-align: center;
 }
 
-.devices {  
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  
+.slides {
+    width: 100%;
 }
 
-.devices__item {
-    position: relative;
-}
+.screen_h {
+   position: absolute;
+   z-index: 2;
+   top: 33%; 
+   right: 19.6%;
+   width: 32.9%;
+   height: auto;
+   cursor: pointer;
 
-.devices__iphone {
+   display: none;
+
+}
+.screen_v {
     position: absolute;
-    top: 0;
-    left: 0; 
-    z-index: 1;
+    z-index: 2;
+    top: 21.3%; 
+    left: 12.3%;
+    width: 18.6%;
+    height: auto;
+    cursor: pointer;
+
+    display: none;
 }
 
-.devices__shadow {
-    opacity: 0.15;
+.layout_h {
+    position: absolute;
+    z-index: 3;
+    top: 30%; 
+    right: 13.2%;
+    opacity: 0;
+    width: 45%;
+    height: auto;
+    cursor: pointer;
+}
+
+.layout_v {
+    position: absolute;
+    z-index: 3;
+    top: 9.5%; 
+    left: 11%;
+    opacity: 0;
+    width: 21.2%;
+    height: auto;
+    cursor: pointer;
+}
+
+.img.screen{
+    opacity: 1;
+}
+
+.carusel {
+    padding-top: 10px;
 }
 
 .slider-btn {
     position: absolute;
-    top: 48%;
-    z-index: 100;
+    top: 46.5%;
+    z-index: 5;
     
     font-size: 0;
     color: transparent;
@@ -144,7 +197,8 @@ p {
 
     border-top: 6px solid #c94549;
     border-left: 6px solid #c94549;
-    border-radius: 4px;  
+    border-radius: 4px; 
+    cursor: pointer; 
 }
 
 .slider-btn:hover:after {
@@ -243,7 +297,6 @@ p {
     overflow: hidden;
  }
 
-
 /*--------Section Portfolio----------*/
 .section_portfolio {
     border-bottom: 6px solid #323746;
@@ -266,9 +319,12 @@ p {
 
     border: 1px solid #666D89;
     border-radius: 4px;
+
+    cursor: pointer;
 }
 
-.tag__item:hover {
+.tag__item:hover,
+.tag__item_active {
     color: #DEDEDE;
 
     border-color: #DEDEDE;
@@ -283,6 +339,10 @@ p {
 
 .portfolio__img__item {
     margin-bottom: 20px;
+}
+
+.portfolio__img__item_active {
+    outline: 5px solid #F06C64;
 }
 
 .portfolio__img__item:nth-child(n+9){
@@ -402,6 +462,7 @@ p {
 .section_contacts {
     border-bottom: 6px solid #EA676B;
     background-color: #F06C64;
+    position: relative;
 }
 
 .section__title_contacts {
@@ -523,6 +584,59 @@ p {
     outline: none;
 }
 
+.message-block {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    background: #0008;
+}
+
+.message {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+
+    font-size: 17px;
+    font-weight: 300;
+    color: #f0d8d9;
+
+    width: 400px;
+    height: 200px;
+    background: #D6564F;
+    box-shadow: 0 0 5px 0 #881216;
+    /*border-radius: 10%;*/
+
+}
+
+.close-btn {
+    padding: 10px 20px;
+    font-weight: 700;
+    font-family: 'Lato';
+    color: #D6564F;
+    
+    background: #F0D8D9;
+    border: none;
+    border-radius: 6px;
+
+    align-items: flex-end;
+
+    cursor: pointer;
+}
+
+.close-btn:focus {
+    border-color: #d1453d;
+    box-shadow: 0 0 5px 0 #881216;
+    outline: none;
+}
 /*--------Contacts----------*/
 .contacts {
     width: 32%;

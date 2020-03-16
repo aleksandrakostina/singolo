@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
                 
@@ -17,41 +17,43 @@
                     <h1>Singolo<span class="logo__star">*</span></h1>
                 </div>
 
-                <nav class="nav">
-                    <a class="nav__link" href="#">Home</a>
-                    <a class="nav__link" href="#">Services</a>         
-                    <a class="nav__link" href="#">Portfolio</a>
-                    <a class="nav__link" href="#">About</a>                  
-                    <a class="nav__link" href="#">Contact</a>
+                <ul class="nav" id="menu">
+                    <li class="nav__link nav__link_active" data-scroll="home">Home</li>
+                    <li class="nav__link"  data-scroll="services">Services</li>         
+                    <li class="nav__link" data-scroll="portfolio">Portfolio</li>
+                    <li class="nav__link"  data-scroll="about">About</li>                  
+                    <li class="nav__link"  data-scroll="contact">Contact</li>
                 </nav>
             </div>
         </div>
     </header>
 
-    <section class="slider">
+    <section id="home" class="slider">
         <div class="container">
             <div class="slider__inner">
                 <div class="slider__buttons">
-                    <a class="slider-btn slider-btn_prev" href="#">Prev</a>
-                    <a class="slider-btn slider-btn_next" href="#">Next</a>
+                    <div class="slider-btn slider-btn_prev" href="#" onclick="plusDivs(-1)">Prev</div>
+                    <div class="slider-btn slider-btn_next" href="#" onclick="plusDivs(1)">Next</div>
                 </div>
-
-                <div class="devices">
-                    <div class="devices__item">
-                        <img class="devices__shadow" src="assets/images/Shadow_V.png" alt="iPhone">
-                        <img class="devices__iphone" src="assets/images/iPhone_V.png" alt="iPhone">
+                
+                <div class="carusel">
+                    <div id="carusel" class="carusel__item carusel__item_1">
+                        <img class="slides" src="assets/images/slide_1.png">
+                        
+                        <img id="layout_h" class="layout layout_h" src="assets/images/layout_h.png" width="458" height="216">
+                        <img id="layout_v" class="layout layout_v" src="assets/images/layout_v.png" width="216" height="458">
+                        <img id="screen_h" class="screen screen_h" src="assets/images/screen_h.png" width="334" height="189">
+                        <img id="screen_v"class="screen screen_v" src="assets/images/screen_v.png" width="189" height="334">
                     </div>
-
-                    <div class="devices__item">
-                        <img class="devices__shadow" src="assets/images/Shadow_H.png" alt="iPhone">
-                        <img class="devices__iphone" src="assets/images/iPhone_H.png" alt="iPhone">
-                    </div>              
+                    <div class="carusel__item carusel__item_2">
+                        <img class="slides" src="assets/images/slide_2.png">
+                    </div>
                 </div>
-            </div>
+            </div>        
         </div>
     </section>
 
-    <section class="section section-services">
+    <section class="section section-services" id="services">
         <div class="container">
             <div class="section__header">
                 <h2 class="section__title">Our Services</h2>
@@ -113,21 +115,21 @@
         </div>
     </section>
 
-    <section class="section section_portfolio">
+    <section class="section section_portfolio" id="portfolio">
         <div class="container">
             <div class="section__header">
                 <h2 class="section__title">Portfolio</h2>
                     <p class="section__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
             </div>
 
-            <div class="tag">
-                <a href="#" class="tag__item">All</a>
-                <a href="#" class="tag__item">Web Design</a>
-                <a href="#" class="tag__item">Graphic Design</a>
-                <a href="#" class="tag__item">Artwork</a>
+            <div id="tag" class="tag">
+                <span href="#" class="tag__item tag__item_active">All</span>
+                <span href="#" class="tag__item">Web Design</span>
+                <span href="#" class="tag__item">Graphic Design</span>
+                <span href="#" class="tag__item">Artwork</span>
             </div>
 
-            <div class="portfolio__img">
+            <div id="portfolio-img" class="portfolio__img">
                 <img class = "portfolio__img__item" src="assets/images/portfolio/1.png" alt="image">
                 <img class = "portfolio__img__item" src="assets/images/portfolio/2.png" alt="image">
                 <img class = "portfolio__img__item" src="assets/images/portfolio/3.png" alt="image">
@@ -144,7 +146,7 @@
         </div>
     </section>
 
-    <section class="section section_about">
+    <section class="section section_about" id="about">
         <div class="container">
             <div class="section__header">
                 <h2 class="section__title">About Us</h2>
@@ -225,7 +227,7 @@
         </div>
     </section>
 
-    <section class="section section_contacts">
+    <section class="section section_contacts" id="contact">
         <div class="container">
             <div class="section__header">
                 <h2 class="section__title section__title_contacts">Get a Quote</h2>
@@ -234,23 +236,30 @@
            
             <div class="forms-contacts">
                 <div class="forms">
-                    <form class="form" action="#" method="POST" name="contacts">
+                    <form class="form" id="form" action="#" method="POST" name="contacts">
                         <div class="forms__item">
-                            <input class="input" type='text' name="name" placeholder="Name (Required)" required pattern="[a-zA-Zа-яА-яЁё]{4,}+">
+                            <input id="name" class="input" type='text' name="name" placeholder="Name (Required)" required >
                         </div>
                         <div class="forms__item">
-                            <input class="input" type='email' name="email" placeholder="Email (Required)" required>
+                            <input id="email" class="input" type='email' name="email" placeholder="Email (Required)" required>
                         </div>
                         <div class="forms__item">
-                            <input class="input" type='text' name="subject" placeholder="Subject">
+                            <input id="subject" class="input" type='text' name="subject" placeholder="Subject">
                         </div>
                         <div class="forms__item">
-                            <textarea class="textarea" name="detail" placeholder="Describe your project in detail..."></textarea>
+                            <textarea id="textarea" class="textarea" name="detail" placeholder="Describe your project in detail..."></textarea>
                         </div>
                         <div class="forms__item">
-                            <input class="submit" type="submit" value="Submit">
+                            <input id="btn" class="submit" type="button" value="Submit">
                         </div>    
                     </form>
+                </div>
+
+                <div id="message-block" class="message-block">
+                    <div id="message" class="message">
+                        <div id="result"></div>
+                        <button id="close-btn" class="close-btn">OK</button>
+                    </div>
                 </div>
 
                 <div class="contacts">
@@ -281,7 +290,7 @@
         <div class="container">
             <div class="footer__inner">
                 <div class="copyright">
-                    <h5>© Copyright 2013 · by PSDchat.com</h5>
+                    <h5>© Copyright 2013</h5>
                 </div>
                 <div class="social">
                     <div class="social__item">
@@ -300,5 +309,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
