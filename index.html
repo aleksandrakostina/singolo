@@ -19,11 +19,11 @@
 
                 <ul class="nav" id="menu">
                     <li class="nav__link nav__link_active" data-scroll="home">Home</li>
-                    <li class="nav__link"  data-scroll="services">Services</li>         
+                    <li class="nav__link" data-scroll="services">Services</li>         
                     <li class="nav__link" data-scroll="portfolio">Portfolio</li>
-                    <li class="nav__link"  data-scroll="about">About</li>                  
-                    <li class="nav__link"  data-scroll="contact">Contact</li>
-                </nav>
+                    <li class="nav__link" data-scroll="about">About</li>                  
+                    <li class="nav__link" data-scroll="contact">Contact</li>
+                </ul>
             </div>
         </div>
     </header>
@@ -32,23 +32,23 @@
         <div class="container">
             <div class="slider__inner">
                 <div class="slider__buttons">
-                    <div class="slider-btn slider-btn_prev" href="#" onclick="plusDivs(-1)">Prev</div>
-                    <div class="slider-btn slider-btn_next" href="#" onclick="plusDivs(1)">Next</div>
+                    <div class="slider-btn slider-btn_prev">Prev</div>
+                    <div class="slider-btn slider-btn_next">Next</div>
                 </div>
-                
-                <div class="carusel">
-                    <div id="carusel" class="carusel__item carusel__item_1">
-                        <img class="slides" src="assets/images/slide_1.png">
-                        
-                        <img id="layout_h" class="layout layout_h" src="assets/images/layout_h.png" width="458" height="216">
-                        <img id="layout_v" class="layout layout_v" src="assets/images/layout_v.png" width="216" height="458">
-                        <img id="screen_h" class="screen screen_h" src="assets/images/screen_h.png" width="334" height="189">
-                        <img id="screen_v"class="screen screen_v" src="assets/images/screen_v.png" width="189" height="334">
+                    <div class="slider__item slider__item_active">
+                        <img class="slides" src="assets/images/slide_1.png" alt="slide">
+                        <div class="phone">
+                            <img id="layout_h" class="layout layout_h" src="assets/images/layout_h.png" width="458" height="216" alt="phone">
+                            <img id="screen_h" class="screen screen_h" src="assets/images/screen_h.png" width="334" height="189" alt="phone">
+                        </div>
+                        <div class="phone">               
+                            <img id="layout_v" class="layout layout_v" src="assets/images/layout_v.png" width="216" height="458" alt="phone">
+                            <img id="screen_v"class="screen screen_v" src="assets/images/screen_v.png" width="189" height="334" alt="phone">
+                        </div>
                     </div>
-                    <div class="carusel__item carusel__item_2">
-                        <img class="slides" src="assets/images/slide_2.png">
+                    <div class="slider__item">
+                        <img class="slides" src="assets/images/slide_2.png" alt="slide">
                     </div>
-                </div>
             </div>        
         </div>
     </section>
@@ -122,14 +122,14 @@
                     <p class="section__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
             </div>
 
-            <div id="tag" class="tag">
-                <span href="#" class="tag__item tag__item_active">All</span>
-                <span href="#" class="tag__item">Web Design</span>
-                <span href="#" class="tag__item">Graphic Design</span>
-                <span href="#" class="tag__item">Artwork</span>
+            <div class="tag">
+                <span class="tag__item tag__item_active">All</span>
+                <span class="tag__item">Web Design</span>
+                <span class="tag__item">Graphic Design</span>
+                <span class="tag__item">Artwork</span>
             </div>
 
-            <div id="portfolio-img" class="portfolio__img">
+            <div class="portfolio__img">
                 <img class = "portfolio__img__item" src="assets/images/portfolio/1.png" alt="image">
                 <img class = "portfolio__img__item" src="assets/images/portfolio/2.png" alt="image">
                 <img class = "portfolio__img__item" src="assets/images/portfolio/3.png" alt="image">
@@ -247,17 +247,17 @@
                             <input id="subject" class="input" type='text' name="subject" placeholder="Subject">
                         </div>
                         <div class="forms__item">
-                            <textarea id="textarea" class="textarea" name="detail" placeholder="Describe your project in detail..."></textarea>
+                            <textarea id="textarea" class="textarea" name="detail" placeholder="Describe your project in detail..." maxlength="700"></textarea>
                         </div>
                         <div class="forms__item">
-                            <input id="btn" class="submit" type="button" value="Submit">
+                            <input id="btn" class="submit" type="submit" value="Submit">
                         </div>    
                     </form>
                 </div>
 
-                <div id="message-block" class="message-block">
-                    <div id="message" class="message">
-                        <div id="result"></div>
+                <div class="message-block">
+                    <div class="message">
+                        <div class="result"></div>
                         <button id="close-btn" class="close-btn">OK</button>
                     </div>
                 </div>
