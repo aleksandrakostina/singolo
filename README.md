@@ -1,1 +1,1 @@
-DOM https://aleksandrakostina.github.io/singolo/index
+DOM and Responsive https://aleksandrakostina.github.io/singolo/index
