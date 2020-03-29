@@ -4,10 +4,10 @@ const BUTTON = document.getElementById('btn');
 const CLOSE_BUTTON = document.getElementById('close-btn');
 
 /*----------NAVIGATION----------*/
-MENU.addEventListener('click', (event) => {
-    MENU.querySelectorAll('.nav__link').forEach(link => link.classList.remove('nav__link_active'));
-    event.target.classList.add('nav__link_active');  
-})
+document.querySelectorAll('.nav__link').forEach(link => link.addEventListener('click', (event) => {
+  document.querySelectorAll('.nav__link').forEach(el => el.classList.remove('nav__link_active'));
+  event.target.classList.add('nav__link_active'); 
+}));
 
 document.addEventListener('scroll', onscroll);
 
@@ -44,12 +44,39 @@ MENU.querySelectorAll('.nav__link').forEach(el => el.addEventListener('click', e
   }
   else {
     window.scrollTo({
-      top: blockOffset - headerHeight/2,
+      top: blockOffset - headerHeight,
       left: 0,
       behavior: 'smooth'
     });
   }
 }));
+
+const BURGER = document.querySelector('.burger-block');
+const HEADER_INNER = document.querySelector('.header__inner');
+
+BURGER.addEventListener('click', event => {  
+  if(BURGER.classList.contains('burger_active')) {
+    BURGER.classList.remove('burger_active');
+    MENU.classList.remove('nav_active');
+    document.querySelector('.opacity').style.display = 'none';
+    HEADER_INNER.classList.remove('header__inner_active'); 
+    document.querySelector('.logo').classList.remove('logo_left');
+  }
+  else {
+    BURGER.classList.add('burger_active');
+    MENU.classList.add('nav_active');
+    document.querySelector('.opacity').style.display = 'block';
+    HEADER_INNER.classList.add('header__inner_active');
+    document.querySelector('.logo').classList.add('logo_left');
+    document.querySelectorAll('.nav__link').forEach(link => link.addEventListener('click', (event) => {
+      BURGER.classList.remove('burger_active');
+      MENU.classList.remove('nav_active');
+      document.querySelector('.opacity').style.display = 'none';
+      HEADER_INNER.classList.remove('header__inner_active'); 
+      document.querySelector('.logo').classList.remove('logo_left');
+    }));
+  }
+})
 
 /*----------SLIDER----------*/
 let items = document.querySelectorAll('.slider__item');
@@ -203,6 +230,11 @@ swipedetect(el);
 var phone = document.querySelectorAll('.phone');
 
 phone.forEach(el => el.querySelectorAll('.layout').forEach(f => f.addEventListener('click', event => {
+  let screen = el.querySelector('.screen');
+   screen.classList.toggle('display');
+})));
+
+phone.forEach(el => el.querySelectorAll('.layout').forEach(f => f.addEventListener('touchstart', event => {
   let screen = el.querySelector('.screen');
    screen.classList.toggle('display');
 })));
