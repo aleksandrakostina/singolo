@@ -44,7 +44,7 @@ MENU.querySelectorAll('.nav__link').forEach(el => el.addEventListener('click', e
   }
   else {
     window.scrollTo({
-      top: blockOffset - headerHeight,
+      top: blockOffset - headerHeight/2,
       left: 0,
       behavior: 'smooth'
     });
